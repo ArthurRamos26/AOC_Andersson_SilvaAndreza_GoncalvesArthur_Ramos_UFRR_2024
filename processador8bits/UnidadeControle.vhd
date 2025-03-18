@@ -43,10 +43,11 @@ begin
 				MemLoad <= '1';   -- load word 
 				MemtoReg <= '1';
 				ResWrite <= '1'; 
-				ULAOp <= "10";
+				ULAOp <= "11";
+				ULASrc <= '1';
 			when "011" =>
 				ULASrc <= '1';    -- store word
-				ULAOp <= "10";
+				ULAOp <= "11";
 				MemWrite <= '1';
 			when "100" =>
 				ULAOp <= "10";    -- soma 
@@ -56,11 +57,11 @@ begin
 				ResWrite <= '1'; 
 			when "110" =>
 				ULASrc <= '1';	   -- load imediato
-				ULAOp <= "10";
+				ULAOp <= "11";
 				ResWrite <= '1';
 			when "111" =>
 				ULASrc <= '1';    -- soma imediato 
-				ULAOp <= "11";
+				ULAOp <= "10";
 				ResWrite <= '1';
 			when others => 
 				null;
